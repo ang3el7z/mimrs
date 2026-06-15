@@ -4,6 +4,13 @@ on:
   schedule:
     - cron: "25 1 * * *"
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - lists.json
+      - scripts/**
+      - .github/workflows/update.yml
 
 permissions:
   contents: write
@@ -15,6 +22,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Generate README
+        run: node scripts/generate-readme.js
+
+      - name: Commit generated README
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update generated README"
+          file_pattern: README.md
 
       - name: Build Mihomo rule sets
         run: bash scripts/build-mrs.sh
@@ -40,4 +56,3 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

@@ -1,18 +1,14 @@
 # mimrs
 
-Mihomo `.mrs` rule sets generated from HaGeZi DNS blocklists.
+Mihomo `.mrs` rule sets generated from domain blocklists.
 
-## Lists
+Generated from `lists.json`. Each item becomes `${name}.mrs`.
 
-Configured in `lists.json`:
-
-- `ad-hagezi-light.mrs` from HaGeZi Light
-- `ad-hagezi-pro-mini.mrs` from HaGeZi Pro mini
-- `ad-hagezi-pro.mrs` from HaGeZi Pro
-
-Every list in `lists.json` is built into a release asset named `${name}.mrs`.
-
-## Mihomo
+| File | Description | Source | Latest |
+| --- | --- | --- | --- |
+| `ad-hagezi-light.mrs` | HaGeZi Light. Small relaxed ads, tracking, metrics, badware list for weak devices and low breakage risk. | [source](https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/light-onlydomains.txt) | [download](https://github.com/ang3el7z/mimrs/releases/latest/download/ad-hagezi-light.mrs) |
+| `ad-hagezi-pro-mini.mrs` | HaGeZi Pro mini. Size-optimized Pro subset for DNS/browser blockers and devices with less RAM. | [source](https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/pro.mini-onlydomains.txt) | [download](https://github.com/ang3el7z/mimrs/releases/latest/download/ad-hagezi-pro-mini.mrs) |
+| `ad-hagezi-pro.mrs` | HaGeZi Pro. Stronger ads, tracking, telemetry, phishing, malware, scam and cryptojacking blocklist. | [source](https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/pro-onlydomains.txt) | [download](https://github.com/ang3el7z/mimrs/releases/latest/download/ad-hagezi-pro.mrs) |
 
 ```yaml
 rule-providers:
@@ -38,43 +34,17 @@ rule-providers:
     url: https://github.com/ang3el7z/mimrs/releases/latest/download/ad-hagezi-pro.mrs
 ```
 
-Use one list at a time:
-
-- `ad-hagezi-light`: weak devices, lowest breakage risk
-- `ad-hagezi-pro-mini`: balanced small list
-- `ad-hagezi-pro`: stronger blocking, larger list
-
-Example:
-
 ```yaml
 rules:
-  - RULE-SET,ad-hagezi-pro-mini,REJECT
+  - RULE-SET,ad-hagezi-light,REJECT
 ```
 
-## Source
-
-Upstream lists come from the HaGeZi mirror:
-
-- `dns-blocklists/wildcard/light-onlydomains.txt`
-- `dns-blocklists/wildcard/pro.mini-onlydomains.txt`
-- `dns-blocklists/wildcard/pro-onlydomains.txt`
-
-Workflow normalizes domains, converts them to Mihomo domain rules, then compiles `.mrs` with `mihomo convert-ruleset`.
-
-## Add Lists
-
-Edit `lists.json`:
+Add list:
 
 ```json
 {
   "name": "ad-example",
+  "description": "Short human-readable description.",
   "url": "https://example.com/domains.txt"
 }
 ```
-
-Rules:
-
-- `name` becomes release asset name: `ad-example.mrs`
-- `url` must point to a domain list, one domain per line
-- comment lines starting with `#` and empty lines are ignored
-- list names may contain lowercase letters, digits, `.`, `_`, `-`

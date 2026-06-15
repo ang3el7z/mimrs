@@ -2,14 +2,17 @@
   "lists": [
     {
       "name": "ad-hagezi-light",
+      "description": "HaGeZi Light. Small relaxed ads, tracking, metrics, badware list for weak devices and low breakage risk.",
       "url": "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/light-onlydomains.txt"
     },
     {
       "name": "ad-hagezi-pro-mini",
+      "description": "HaGeZi Pro mini. Size-optimized Pro subset for DNS/browser blockers and devices with less RAM.",
       "url": "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/pro.mini-onlydomains.txt"
     },
     {
       "name": "ad-hagezi-pro",
+      "description": "HaGeZi Pro. Stronger ads, tracking, telemetry, phishing, malware, scam and cryptojacking blocklist.",
       "url": "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/pro-onlydomains.txt"
     }
   ]
