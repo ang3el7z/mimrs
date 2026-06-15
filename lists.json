@@ -1,0 +1,16 @@
+{
+  "lists": [
+    {
+      "name": "ad-hagezi-light",
+      "url": "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/light-onlydomains.txt"
+    },
+    {
+      "name": "ad-hagezi-pro-mini",
+      "url": "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/pro.mini-onlydomains.txt"
+    },
+    {
+      "name": "ad-hagezi-pro",
+      "url": "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/wildcard/pro-onlydomains.txt"
+    }
+  ]
+}
