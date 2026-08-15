@@ -16,9 +16,9 @@
 | `akira-discord@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml) |
 | `akira-discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs) |
 | `akira-discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs) |
+| `akira-games@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs) |
+| `akira-games@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs) |
 | `akira-kodik@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs) |
-| `akira-photonengine@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@domain.mrs) |
-| `akira-photonengine@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@ipcidr.mrs) |
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
 | `akira-prizrak@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs) |
 | `akira-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs) |
@@ -102,24 +102,24 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs
+  akira-games@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs
+  akira-games@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs
   akira-kodik@domain:
     type: http
     behavior: domain
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs
-  akira-photonengine@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@domain.mrs
-  akira-photonengine@ipcidr:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@ipcidr.mrs
   akira-prizrak@domain:
     type: http
     behavior: domain
@@ -174,11 +174,11 @@ rules:
     (RULE-SET,akira-discord@ipcidr,no-resolve),
     (RULE-SET,akira-discord@classical)
     ),PROXY
-  - RULE-SET,akira-kodik@domain,PROXY
   - OR,(
-    (RULE-SET,akira-photonengine@domain),
-    (RULE-SET,akira-photonengine@ipcidr,no-resolve)
+    (RULE-SET,akira-games@domain),
+    (RULE-SET,akira-games@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-kodik@domain,PROXY
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
@@ -278,20 +278,20 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs,
     }
+  akira-games@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs,
+    }
+  akira-games@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs,
+    }
   akira-kodik@domain:
     {
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs,
-    }
-  akira-photonengine@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@domain.mrs,
-    }
-  akira-photonengine@ipcidr:
-    {
-      <<: *ipcidr,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@ipcidr.mrs,
     }
   akira-prizrak@domain:
     {
@@ -341,11 +341,11 @@ rules:
     (RULE-SET,akira-discord@ipcidr,no-resolve),
     (RULE-SET,akira-discord@classical)
     ),PROXY
-  - RULE-SET,akira-kodik@domain,PROXY
   - OR,(
-    (RULE-SET,akira-photonengine@domain),
-    (RULE-SET,akira-photonengine@ipcidr,no-resolve)
+    (RULE-SET,akira-games@domain),
+    (RULE-SET,akira-games@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-kodik@domain,PROXY
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
