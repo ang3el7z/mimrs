@@ -17,6 +17,9 @@
 | `kodik-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/kodik-domain.mrs) |
 | `photonengine-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-domain.mrs) |
 | `photonengine-ip.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-ip.mrs) |
+| `prizrak-ai-classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-classical.yaml) |
+| `prizrak-ai-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-domain.mrs) |
+| `prizrak-ai-ip.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-ip.mrs) |
 | `prizrak-bundle-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-domain.mrs) |
 | `prizrak-bundle-ip.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-ip.mrs) |
 | `telegram-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/telegram-domain.mrs) |
@@ -104,6 +107,24 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-ip.mrs
+  prizrak-ai-classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-classical.yaml
+  prizrak-ai-domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-domain.mrs
+  prizrak-ai-ip:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-ip.mrs
   prizrak-bundle-domain:
     type: http
     behavior: domain
@@ -143,6 +164,9 @@ rules:
   - RULE-SET,kodik-domain,PROXY
   - RULE-SET,photonengine-domain,PROXY
   - RULE-SET,photonengine-ip,PROXY
+  - RULE-SET,prizrak-ai-classical,PROXY
+  - RULE-SET,prizrak-ai-domain,PROXY
+  - RULE-SET,prizrak-ai-ip,PROXY
   - RULE-SET,prizrak-bundle-domain,PROXY
   - RULE-SET,prizrak-bundle-ip,PROXY
   - RULE-SET,telegram-domain,PROXY
@@ -215,6 +239,15 @@ rule-providers:
   photonengine-ip:
     <<: *ipcidr
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-ip.mrs
+  prizrak-ai-classical:
+    <<: *classical
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-classical.yaml
+  prizrak-ai-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-domain.mrs
+  prizrak-ai-ip:
+    <<: *ipcidr
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai-ip.mrs
   prizrak-bundle-domain:
     <<: *domain
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-domain.mrs
@@ -242,6 +275,9 @@ rules:
   - RULE-SET,kodik-domain,PROXY
   - RULE-SET,photonengine-domain,PROXY
   - RULE-SET,photonengine-ip,PROXY
+  - RULE-SET,prizrak-ai-classical,PROXY
+  - RULE-SET,prizrak-ai-domain,PROXY
+  - RULE-SET,prizrak-ai-ip,PROXY
   - RULE-SET,prizrak-bundle-domain,PROXY
   - RULE-SET,prizrak-bundle-ip,PROXY
   - RULE-SET,telegram-domain,PROXY
