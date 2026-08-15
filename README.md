@@ -65,13 +65,13 @@ rule-providers:
   block-quic-classical:
     type: http
     behavior: classical
-    format: yaml
+    format: text
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-quic-classical.yaml
   discord-classical:
     type: http
     behavior: classical
-    format: yaml
+    format: text
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord-classical.yaml
   discord-domain:
@@ -169,7 +169,7 @@ anchors:
   classical: &classical
     type: http
     behavior: classical
-    format: yaml
+    format: text
     interval: 86400
   inline: &inline
     type: inline
