@@ -24,6 +24,7 @@
 | `akira-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs) |
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
+| `yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/yummyani@domain.mrs) |
 
 ## Mihomo
 
@@ -149,6 +150,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs
+  yummyani@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/yummyani@domain.mrs
 
 rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
@@ -181,6 +188,7 @@ rules:
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,yummyani@domain,PROXY
 ```
 
 <details>
@@ -310,6 +318,11 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs,
     }
+  yummyani@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/yummyani@domain.mrs,
+    }
 
 rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
@@ -342,6 +355,7 @@ rules:
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,yummyani@domain,PROXY
 ```
 
 </details>
