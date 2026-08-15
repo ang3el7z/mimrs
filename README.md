@@ -10,11 +10,14 @@
 | `akira-direct@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct@domain.mrs) |
 | `akira-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs) |
 | `block-ipv6@ipcidr.mrs` | `ipcidr` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-ipv6@ipcidr.mrs) |
+| `block-quic@classical.yaml` | `classical` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-quic@classical.yaml) |
+| `discord@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord@classical.yaml) |
 | `discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord@domain.mrs) |
 | `discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord@ipcidr.mrs) |
 | `kodik@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/kodik@domain.mrs) |
 | `photonengine@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine@domain.mrs) |
 | `photonengine@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine@ipcidr.mrs) |
+| `prizrak-ai@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai@classical.yaml) |
 | `prizrak-ai@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai@domain.mrs) |
 | `prizrak-ai@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai@ipcidr.mrs) |
 | `prizrak-blocked@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-blocked@domain.mrs) |
@@ -62,6 +65,18 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-ipv6@ipcidr.mrs
+  block-quic@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-quic@classical.yaml
+  discord@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord@classical.yaml
   discord@domain:
     type: http
     behavior: domain
@@ -92,6 +107,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine@ipcidr.mrs
+  prizrak-ai@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai@classical.yaml
   prizrak-ai@domain:
     type: http
     behavior: domain
@@ -136,11 +157,14 @@ rules:
   - RULE-SET,akira-direct@domain,DIRECT
   - RULE-SET,akira-proxy@domain,PROXY
   - RULE-SET,block-ipv6@ipcidr,REJECT
+  - RULE-SET,block-quic@classical,REJECT
+  - RULE-SET,discord@classical,PROXY
   - RULE-SET,discord@domain,PROXY
   - RULE-SET,discord@ipcidr,PROXY
   - RULE-SET,kodik@domain,PROXY
   - RULE-SET,photonengine@domain,PROXY
   - RULE-SET,photonengine@ipcidr,PROXY
+  - RULE-SET,prizrak-ai@classical,PROXY
   - RULE-SET,prizrak-ai@domain,PROXY
   - RULE-SET,prizrak-ai@ipcidr,PROXY
   - RULE-SET,prizrak-blocked@domain,PROXY
@@ -194,6 +218,12 @@ rule-providers:
   block-ipv6@ipcidr:
     <<: *ipcidr
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-ipv6@ipcidr.mrs
+  block-quic@classical:
+    <<: *classical
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-quic@classical.yaml
+  discord@classical:
+    <<: *classical
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord@classical.yaml
   discord@domain:
     <<: *domain
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord@domain.mrs
@@ -209,6 +239,9 @@ rule-providers:
   photonengine@ipcidr:
     <<: *ipcidr
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine@ipcidr.mrs
+  prizrak-ai@classical:
+    <<: *classical
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai@classical.yaml
   prizrak-ai@domain:
     <<: *domain
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-ai@domain.mrs
@@ -235,11 +268,14 @@ rules:
   - RULE-SET,akira-direct@domain,DIRECT
   - RULE-SET,akira-proxy@domain,PROXY
   - RULE-SET,block-ipv6@ipcidr,REJECT
+  - RULE-SET,block-quic@classical,REJECT
+  - RULE-SET,discord@classical,PROXY
   - RULE-SET,discord@domain,PROXY
   - RULE-SET,discord@ipcidr,PROXY
   - RULE-SET,kodik@domain,PROXY
   - RULE-SET,photonengine@domain,PROXY
   - RULE-SET,photonengine@ipcidr,PROXY
+  - RULE-SET,prizrak-ai@classical,PROXY
   - RULE-SET,prizrak-ai@domain,PROXY
   - RULE-SET,prizrak-ai@ipcidr,PROXY
   - RULE-SET,prizrak-blocked@domain,PROXY
