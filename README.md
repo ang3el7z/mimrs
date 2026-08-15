@@ -148,3 +148,104 @@ rules:
   - RULE-SET,telegram-domain,PROXY
   - RULE-SET,telegram-ip,PROXY
 ```
+
+<details>
+<summary>Короткий вариант с YAML anchors</summary>
+
+Открой блок и скопируй его целиком.
+
+```yaml
+anchors:
+  domain: &domain
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+  ipcidr: &ipcidr
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+  classical: &classical
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+  inline: &inline
+    type: inline
+    behavior: classical
+
+rule-providers:
+  ad-hagezi-light-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/ad-hagezi-light-domain.mrs
+  ad-hagezi-pro-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/ad-hagezi-pro-domain.mrs
+  ad-hagezi-pro-mini-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/ad-hagezi-pro-mini-domain.mrs
+  akira-direct-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct-domain.mrs
+  akira-proxy-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy-domain.mrs
+  block-ipv6-ip:
+    <<: *ipcidr
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-ipv6-ip.mrs
+  block-quic-classical:
+    <<: *classical
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/block-quic-classical.yaml
+  discord-classical:
+    <<: *classical
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord-classical.yaml
+  discord-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord-domain.mrs
+  discord-ip:
+    <<: *ipcidr
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/discord-ip.mrs
+  kodik-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/kodik-domain.mrs
+  photonengine-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-domain.mrs
+  photonengine-ip:
+    <<: *ipcidr
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-ip.mrs
+  prizrak-bundle-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-domain.mrs
+  prizrak-bundle-ip:
+    <<: *ipcidr
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-ip.mrs
+  telegram-domain:
+    <<: *domain
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/telegram-domain.mrs
+  telegram-ip:
+    <<: *ipcidr
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/telegram-ip.mrs
+
+rules:
+  - RULE-SET,ad-hagezi-light-domain,REJECT
+  - RULE-SET,ad-hagezi-pro-domain,REJECT
+  - RULE-SET,ad-hagezi-pro-mini-domain,REJECT
+  - RULE-SET,akira-direct-domain,DIRECT
+  - RULE-SET,akira-proxy-domain,PROXY
+  - RULE-SET,block-ipv6-ip,REJECT
+  - RULE-SET,block-quic-classical,REJECT
+  - RULE-SET,discord-classical,PROXY
+  - RULE-SET,discord-domain,PROXY
+  - RULE-SET,discord-ip,PROXY
+  - RULE-SET,kodik-domain,PROXY
+  - RULE-SET,photonengine-domain,PROXY
+  - RULE-SET,photonengine-ip,PROXY
+  - RULE-SET,prizrak-bundle-domain,PROXY
+  - RULE-SET,prizrak-bundle-ip,PROXY
+  - RULE-SET,telegram-domain,PROXY
+  - RULE-SET,telegram-ip,PROXY
+```
+
+</details>
