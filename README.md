@@ -211,65 +211,105 @@ anchors:
 
 rule-providers:
   akira-ad-hagezi-light@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-light@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-light@domain.mrs,
+    }
   akira-ad-hagezi-pro-mini@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro-mini@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro-mini@domain.mrs,
+    }
   akira-ad-hagezi-pro@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs,
+    }
   akira-ai@classical:
-    <<: *classical
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml,
+    }
   akira-ai@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs,
+    }
   akira-ai@ipcidr:
-    <<: *ipcidr
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs,
+    }
   akira-block-ipv6@ipcidr:
-    <<: *ipcidr
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-ipv6@ipcidr.mrs
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-ipv6@ipcidr.mrs,
+    }
   akira-block-quic@classical:
-    <<: *classical
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml,
+    }
   akira-direct@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct@domain.mrs,
+    }
   akira-discord@classical:
-    <<: *classical
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml,
+    }
   akira-discord@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs,
+    }
   akira-discord@ipcidr:
-    <<: *ipcidr
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs,
+    }
   akira-kodik@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs,
+    }
   akira-photonengine@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@domain.mrs,
+    }
   akira-photonengine@ipcidr:
-    <<: *ipcidr
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@ipcidr.mrs
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-photonengine@ipcidr.mrs,
+    }
   akira-prizrak@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs,
+    }
   akira-prizrak@ipcidr:
-    <<: *ipcidr
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs,
+    }
   akira-proxy@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs,
+    }
   akira-telegram@domain:
-    <<: *domain
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs,
+    }
   akira-telegram@ipcidr:
-    <<: *ipcidr
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs,
+    }
 
 rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
