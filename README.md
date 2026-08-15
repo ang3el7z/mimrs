@@ -152,25 +152,35 @@ rule-providers:
 
 rules:
   - RULE-SET,ad-hagezi-light@domain,REJECT
-  - RULE-SET,ad-hagezi-pro-mini@domain,REJECT
   - RULE-SET,ad-hagezi-pro@domain,REJECT
+  - RULE-SET,ad-hagezi-pro-mini@domain,REJECT
   - RULE-SET,akira-direct@domain,DIRECT
   - RULE-SET,akira-proxy@domain,PROXY
-  - RULE-SET,block-ipv6@ipcidr,REJECT
+  - RULE-SET,block-ipv6@ipcidr,REJECT,no-resolve
   - RULE-SET,block-quic@classical,REJECT
-  - RULE-SET,discord@classical,PROXY
-  - RULE-SET,discord@domain,PROXY
-  - RULE-SET,discord@ipcidr,PROXY
+  - OR,(
+    (RULE-SET,discord@domain),
+    (RULE-SET,discord@ipcidr,no-resolve),
+    (RULE-SET,discord@classical)
+    ),PROXY
   - RULE-SET,kodik@domain,PROXY
-  - RULE-SET,photonengine@domain,PROXY
-  - RULE-SET,photonengine@ipcidr,PROXY
-  - RULE-SET,prizrak-ai@classical,PROXY
-  - RULE-SET,prizrak-ai@domain,PROXY
-  - RULE-SET,prizrak-ai@ipcidr,PROXY
-  - RULE-SET,prizrak-blocked@domain,PROXY
-  - RULE-SET,prizrak-blocked@ipcidr,PROXY
-  - RULE-SET,telegram@domain,PROXY
-  - RULE-SET,telegram@ipcidr,PROXY
+  - OR,(
+    (RULE-SET,photonengine@domain),
+    (RULE-SET,photonengine@ipcidr,no-resolve)
+    ),PROXY
+  - OR,(
+    (RULE-SET,prizrak-ai@domain),
+    (RULE-SET,prizrak-ai@ipcidr,no-resolve),
+    (RULE-SET,prizrak-ai@classical)
+    ),PROXY
+  - OR,(
+    (RULE-SET,prizrak-blocked@domain),
+    (RULE-SET,prizrak-blocked@ipcidr,no-resolve)
+    ),PROXY
+  - OR,(
+    (RULE-SET,telegram@domain),
+    (RULE-SET,telegram@ipcidr,no-resolve)
+    ),PROXY
 ```
 
 <details>
@@ -263,25 +273,35 @@ rule-providers:
 
 rules:
   - RULE-SET,ad-hagezi-light@domain,REJECT
-  - RULE-SET,ad-hagezi-pro-mini@domain,REJECT
   - RULE-SET,ad-hagezi-pro@domain,REJECT
+  - RULE-SET,ad-hagezi-pro-mini@domain,REJECT
   - RULE-SET,akira-direct@domain,DIRECT
   - RULE-SET,akira-proxy@domain,PROXY
-  - RULE-SET,block-ipv6@ipcidr,REJECT
+  - RULE-SET,block-ipv6@ipcidr,REJECT,no-resolve
   - RULE-SET,block-quic@classical,REJECT
-  - RULE-SET,discord@classical,PROXY
-  - RULE-SET,discord@domain,PROXY
-  - RULE-SET,discord@ipcidr,PROXY
+  - OR,(
+    (RULE-SET,discord@domain),
+    (RULE-SET,discord@ipcidr,no-resolve),
+    (RULE-SET,discord@classical)
+    ),PROXY
   - RULE-SET,kodik@domain,PROXY
-  - RULE-SET,photonengine@domain,PROXY
-  - RULE-SET,photonengine@ipcidr,PROXY
-  - RULE-SET,prizrak-ai@classical,PROXY
-  - RULE-SET,prizrak-ai@domain,PROXY
-  - RULE-SET,prizrak-ai@ipcidr,PROXY
-  - RULE-SET,prizrak-blocked@domain,PROXY
-  - RULE-SET,prizrak-blocked@ipcidr,PROXY
-  - RULE-SET,telegram@domain,PROXY
-  - RULE-SET,telegram@ipcidr,PROXY
+  - OR,(
+    (RULE-SET,photonengine@domain),
+    (RULE-SET,photonengine@ipcidr,no-resolve)
+    ),PROXY
+  - OR,(
+    (RULE-SET,prizrak-ai@domain),
+    (RULE-SET,prizrak-ai@ipcidr,no-resolve),
+    (RULE-SET,prizrak-ai@classical)
+    ),PROXY
+  - OR,(
+    (RULE-SET,prizrak-blocked@domain),
+    (RULE-SET,prizrak-blocked@ipcidr,no-resolve)
+    ),PROXY
+  - OR,(
+    (RULE-SET,telegram@domain),
+    (RULE-SET,telegram@ipcidr,no-resolve)
+    ),PROXY
 ```
 
 </details>
