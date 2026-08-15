@@ -11,7 +11,7 @@
 | `kodik-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/kodik-domain.mrs) |
 | `photonengine-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-domain.mrs) |
 | `photonengine-ip.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-ip.mrs) |
-| `prizrak-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-domain.mrs) |
+| `prizrak-bundle-domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-domain.mrs) |
 
 ## Mihomo
 
@@ -59,12 +59,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/photonengine-ip.mrs
-  prizrak-domain:
+  prizrak-bundle-domain:
     type: http
     behavior: domain
     format: mrs
     interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-domain.mrs
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/prizrak-bundle-domain.mrs
 
 rules:
   - RULE-SET,ad-hagezi-light-domain,REJECT
@@ -74,5 +74,5 @@ rules:
   - RULE-SET,kodik-domain,PROXY
   - RULE-SET,photonengine-domain,PROXY
   - RULE-SET,photonengine-ip,PROXY
-  - RULE-SET,prizrak-domain,PROXY
+  - RULE-SET,prizrak-bundle-domain,PROXY
 ```
