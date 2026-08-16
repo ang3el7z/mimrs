@@ -20,7 +20,10 @@
 | `akira-discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs) |
 | `akira-games@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs) |
 | `akira-games@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs) |
+| `akira-ip-geo-detect@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs) |
 | `akira-kodik@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs) |
+| `akira-private@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs) |
+| `akira-private@ipcidr.mrs` | `ipcidr` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs) |
 | `akira-prizrak-all-in@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@domain.mrs) |
 | `akira-prizrak-all-in@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@ipcidr.mrs) |
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
@@ -28,6 +31,7 @@
 | `akira-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs) |
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
+| `akira-youtube@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs) |
 | `akira-yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs) |
 
 ## Mihomo
@@ -130,12 +134,30 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs
+  akira-ip-geo-detect@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs
   akira-kodik@domain:
     type: http
     behavior: domain
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs
+  akira-private@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs
+  akira-private@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs
   akira-prizrak-all-in@domain:
     type: http
     behavior: domain
@@ -178,6 +200,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs
+  akira-youtube@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs
   akira-yummyani@domain:
     type: http
     behavior: domain
@@ -208,7 +236,12 @@ rules:
     (RULE-SET,akira-games@domain),
     (RULE-SET,akira-games@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-ip-geo-detect@domain,DIRECT
   - RULE-SET,akira-kodik@domain,PROXY
+  - OR,(
+    (RULE-SET,akira-private@domain),
+    (RULE-SET,akira-private@ipcidr,no-resolve)
+    ),DIRECT
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
@@ -222,6 +255,7 @@ rules:
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-youtube@domain,PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
 ```
 
@@ -332,10 +366,25 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs,
     }
+  akira-ip-geo-detect@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs,
+    }
   akira-kodik@domain:
     {
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs,
+    }
+  akira-private@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs,
+    }
+  akira-private@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs,
     }
   akira-prizrak-all-in@domain:
     {
@@ -372,6 +421,11 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs,
     }
+  akira-youtube@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs,
+    }
   akira-yummyani@domain:
     {
       <<: *domain,
@@ -401,7 +455,12 @@ rules:
     (RULE-SET,akira-games@domain),
     (RULE-SET,akira-games@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-ip-geo-detect@domain,DIRECT
   - RULE-SET,akira-kodik@domain,PROXY
+  - OR,(
+    (RULE-SET,akira-private@domain),
+    (RULE-SET,akira-private@ipcidr,no-resolve)
+    ),DIRECT
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
@@ -415,6 +474,7 @@ rules:
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-youtube@domain,PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
 ```
 
