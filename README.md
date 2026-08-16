@@ -31,6 +31,8 @@
 | `akira-prizrak@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs) |
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
+| `akira-twitch-ads@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs) |
+| `akira-twitch@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs) |
 | `akira-youtube@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs) |
 | `akira-yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs) |
 
@@ -200,6 +202,18 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs
+  akira-twitch-ads@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs
+  akira-twitch@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs
   akira-youtube@domain:
     type: http
     behavior: domain
@@ -255,6 +269,8 @@ rules:
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-twitch@domain,DIRECT
+  - RULE-SET,akira-twitch-ads@domain,PROXY
   - RULE-SET,akira-youtube@domain,PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
 ```
@@ -421,6 +437,16 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs,
     }
+  akira-twitch-ads@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs,
+    }
+  akira-twitch@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs,
+    }
   akira-youtube@domain:
     {
       <<: *domain,
@@ -474,6 +500,8 @@ rules:
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-twitch@domain,DIRECT
+  - RULE-SET,akira-twitch-ads@domain,PROXY
   - RULE-SET,akira-youtube@domain,PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
 ```
