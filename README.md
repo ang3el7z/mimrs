@@ -7,6 +7,8 @@
 | `akira-ad-hagezi-light@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-light@domain.mrs) |
 | `akira-ad-hagezi-pro-mini@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro-mini@domain.mrs) |
 | `akira-ad-hagezi-pro@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs) |
+| `akira-ads-osid-big@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-big@domain.mrs) |
+| `akira-ads-osid-small@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs) |
 | `akira-ai@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml) |
 | `akira-ai@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs) |
 | `akira-ai@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs) |
@@ -27,7 +29,6 @@
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
 | `akira-yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs) |
-| `oisd-small@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/oisd-small@domain.mrs) |
 
 ## Mihomo
 
@@ -51,6 +52,18 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs
+  akira-ads-osid-big@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-big@domain.mrs
+  akira-ads-osid-small@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs
   akira-ai@classical:
     type: http
     behavior: classical
@@ -171,17 +184,13 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs
-  oisd-small@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/oisd-small@domain.mrs
 
 rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro-mini@domain,REJECT
+  - RULE-SET,akira-ads-osid-big@domain,REJECT
+  - RULE-SET,akira-ads-osid-small@domain,REJECT
   - OR,(
     (RULE-SET,akira-ai@domain),
     (RULE-SET,akira-ai@ipcidr,no-resolve),
@@ -214,7 +223,6 @@ rules:
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
-  - RULE-SET,oisd-small@domain,REJECT
 ```
 
 <details>
@@ -258,6 +266,16 @@ rule-providers:
     {
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs,
+    }
+  akira-ads-osid-big@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-big@domain.mrs,
+    }
+  akira-ads-osid-small@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs,
     }
   akira-ai@classical:
     {
@@ -359,16 +377,13 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs,
     }
-  oisd-small@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/oisd-small@domain.mrs,
-    }
 
 rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro-mini@domain,REJECT
+  - RULE-SET,akira-ads-osid-big@domain,REJECT
+  - RULE-SET,akira-ads-osid-small@domain,REJECT
   - OR,(
     (RULE-SET,akira-ai@domain),
     (RULE-SET,akira-ai@ipcidr,no-resolve),
@@ -401,7 +416,6 @@ rules:
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
-  - RULE-SET,oisd-small@domain,REJECT
 ```
 
 </details>
