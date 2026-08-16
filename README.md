@@ -7,6 +7,7 @@
 | `akira-ad-hagezi-light@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-light@domain.mrs) |
 | `akira-ad-hagezi-pro-mini@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro-mini@domain.mrs) |
 | `akira-ad-hagezi-pro@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs) |
+| `akira-adlist@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-adlist@domain.mrs) |
 | `akira-ads-osid-big@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-big@domain.mrs) |
 | `akira-ads-osid-small@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs) |
 | `akira-ai@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml) |
@@ -64,6 +65,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs
+  akira-adlist@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-adlist@domain.mrs
   akira-ads-osid-big@domain:
     type: http
     behavior: domain
@@ -273,6 +280,7 @@ rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro-mini@domain,REJECT
+  - RULE-SET,akira-adlist@domain,REJECT
   - RULE-SET,akira-ads-osid-big@domain,REJECT
   - RULE-SET,akira-ads-osid-small@domain,REJECT
   - OR,(
@@ -368,6 +376,11 @@ rule-providers:
     {
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ad-hagezi-pro@domain.mrs,
+    }
+  akira-adlist@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-adlist@domain.mrs,
     }
   akira-ads-osid-big@domain:
     {
@@ -544,6 +557,7 @@ rules:
   - RULE-SET,akira-ad-hagezi-light@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro@domain,REJECT
   - RULE-SET,akira-ad-hagezi-pro-mini@domain,REJECT
+  - RULE-SET,akira-adlist@domain,REJECT
   - RULE-SET,akira-ads-osid-big@domain,REJECT
   - RULE-SET,akira-ads-osid-small@domain,REJECT
   - OR,(
