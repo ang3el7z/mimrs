@@ -14,7 +14,8 @@
 | `akira-ai@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs) |
 | `akira-block-ipv6@ipcidr.mrs` | `ipcidr` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-ipv6@ipcidr.mrs) |
 | `akira-block-quic@classical.yaml` | `classical` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml) |
-| `akira-direct@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct@domain.mrs) |
+| `akira-boundle-direct@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs) |
+| `akira-boundle-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs) |
 | `akira-discord@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml) |
 | `akira-discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs) |
 | `akira-discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs) |
@@ -28,7 +29,6 @@
 | `akira-prizrak-all-in@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@ipcidr.mrs) |
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
 | `akira-prizrak@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs) |
-| `akira-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs) |
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
 | `akira-youtube@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs) |
@@ -98,12 +98,18 @@ rule-providers:
     format: yaml
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml
-  akira-direct@domain:
+  akira-boundle-direct@domain:
     type: http
     behavior: domain
     format: mrs
     interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct@domain.mrs
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs
+  akira-boundle-proxy@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs
   akira-discord@classical:
     type: http
     behavior: classical
@@ -182,12 +188,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs
-  akira-proxy@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs
   akira-telegram@domain:
     type: http
     behavior: domain
@@ -226,7 +226,8 @@ rules:
     ),PROXY
   - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
   - RULE-SET,akira-block-quic@classical,REJECT
-  - RULE-SET,akira-direct@domain,DIRECT
+  - RULE-SET,akira-boundle-direct@domain,DIRECT
+  - RULE-SET,akira-boundle-proxy@domain,PROXY
   - OR,(
     (RULE-SET,akira-discord@domain),
     (RULE-SET,akira-discord@ipcidr,no-resolve),
@@ -250,7 +251,6 @@ rules:
     (RULE-SET,akira-prizrak-all-in@domain),
     (RULE-SET,akira-prizrak-all-in@ipcidr,no-resolve)
     ),PROXY
-  - RULE-SET,akira-proxy@domain,PROXY
   - OR,(
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
@@ -336,10 +336,15 @@ rule-providers:
       <<: *classical,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml,
     }
-  akira-direct@domain:
+  akira-boundle-direct@domain:
     {
       <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-direct@domain.mrs,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs,
+    }
+  akira-boundle-proxy@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs,
     }
   akira-discord@classical:
     {
@@ -406,11 +411,6 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs,
     }
-  akira-proxy@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-proxy@domain.mrs,
-    }
   akira-telegram@domain:
     {
       <<: *domain,
@@ -445,7 +445,8 @@ rules:
     ),PROXY
   - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
   - RULE-SET,akira-block-quic@classical,REJECT
-  - RULE-SET,akira-direct@domain,DIRECT
+  - RULE-SET,akira-boundle-direct@domain,DIRECT
+  - RULE-SET,akira-boundle-proxy@domain,PROXY
   - OR,(
     (RULE-SET,akira-discord@domain),
     (RULE-SET,akira-discord@ipcidr,no-resolve),
@@ -469,7 +470,6 @@ rules:
     (RULE-SET,akira-prizrak-all-in@domain),
     (RULE-SET,akira-prizrak-all-in@ipcidr,no-resolve)
     ),PROXY
-  - RULE-SET,akira-proxy@domain,PROXY
   - OR,(
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
