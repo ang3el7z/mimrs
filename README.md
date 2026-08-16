@@ -10,12 +10,16 @@
 | `akira-adlist@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-adlist@domain.mrs) |
 | `akira-ads-osid-big@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-big@domain.mrs) |
 | `akira-ads-osid-small@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs) |
-| `akira-ai@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml) |
-| `akira-ai@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs) |
-| `akira-ai@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs) |
 | `akira-block-ipv6@ipcidr.mrs` | `ipcidr` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-ipv6@ipcidr.mrs) |
 | `akira-block-quic@classical.yaml` | `classical` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml) |
 | `akira-boundle-direct@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs) |
+| `akira-ip-geo-detect@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs) |
+| `akira-private@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs) |
+| `akira-private@ipcidr.mrs` | `ipcidr` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs) |
+| `akira-twitch@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs) |
+| `akira-ai@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml) |
+| `akira-ai@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs) |
+| `akira-ai@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs) |
 | `akira-boundle-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs) |
 | `akira-discord@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml) |
 | `akira-discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs) |
@@ -25,12 +29,9 @@
 | `akira-github@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-github@domain.mrs) |
 | `akira-google@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@domain.mrs) |
 | `akira-google@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@ipcidr.mrs) |
-| `akira-ip-geo-detect@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs) |
 | `akira-kodik@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs) |
 | `akira-meta@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@domain.mrs) |
 | `akira-meta@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs) |
-| `akira-private@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs) |
-| `akira-private@ipcidr.mrs` | `ipcidr` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs) |
 | `akira-prizrak-all-in@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@domain.mrs) |
 | `akira-prizrak-all-in@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@ipcidr.mrs) |
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
@@ -39,7 +40,6 @@
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
 | `akira-tiktok@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-tiktok@domain.mrs) |
 | `akira-twitch-ads@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs) |
-| `akira-twitch@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs) |
 | `akira-youtube@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs) |
 | `akira-yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs) |
 
@@ -83,24 +83,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs
-  akira-ai@classical:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml
-  akira-ai@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs
-  akira-ai@ipcidr:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs
   akira-block-ipv6@ipcidr:
     type: http
     behavior: ipcidr
@@ -119,6 +101,48 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs
+  akira-ip-geo-detect@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs
+  akira-private@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs
+  akira-private@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs
+  akira-twitch@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs
+  akira-ai@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml
+  akira-ai@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs
+  akira-ai@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs
   akira-boundle-proxy@domain:
     type: http
     behavior: domain
@@ -173,12 +197,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@ipcidr.mrs
-  akira-ip-geo-detect@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs
   akira-kodik@domain:
     type: http
     behavior: domain
@@ -197,18 +215,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs
-  akira-private@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs
-  akira-private@ipcidr:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs
   akira-prizrak-all-in@domain:
     type: http
     behavior: domain
@@ -257,12 +263,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs
-  akira-twitch@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs
   akira-youtube@domain:
     type: http
     behavior: domain
@@ -283,14 +283,20 @@ rules:
   - RULE-SET,akira-adlist@domain,REJECT
   - RULE-SET,akira-ads-osid-big@domain,REJECT
   - RULE-SET,akira-ads-osid-small@domain,REJECT
+  - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
+  - RULE-SET,akira-block-quic@classical,REJECT
+  - RULE-SET,akira-boundle-direct@domain,DIRECT
+  - RULE-SET,akira-ip-geo-detect@domain,DIRECT
+  - OR,(
+    (RULE-SET,akira-private@domain),
+    (RULE-SET,akira-private@ipcidr,no-resolve)
+    ),DIRECT
+  - RULE-SET,akira-twitch@domain,DIRECT
   - OR,(
     (RULE-SET,akira-ai@domain),
     (RULE-SET,akira-ai@ipcidr,no-resolve),
     (RULE-SET,akira-ai@classical)
     ),PROXY
-  - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
-  - RULE-SET,akira-block-quic@classical,REJECT
-  - RULE-SET,akira-boundle-direct@domain,DIRECT
   - RULE-SET,akira-boundle-proxy@domain,PROXY
   - OR,(
     (RULE-SET,akira-discord@domain),
@@ -306,16 +312,11 @@ rules:
     (RULE-SET,akira-google@domain),
     (RULE-SET,akira-google@ipcidr,no-resolve)
     ),PROXY
-  - RULE-SET,akira-ip-geo-detect@domain,DIRECT
   - RULE-SET,akira-kodik@domain,PROXY
   - OR,(
     (RULE-SET,akira-meta@domain),
     (RULE-SET,akira-meta@ipcidr,no-resolve)
     ),PROXY
-  - OR,(
-    (RULE-SET,akira-private@domain),
-    (RULE-SET,akira-private@ipcidr,no-resolve)
-    ),DIRECT
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
@@ -329,7 +330,6 @@ rules:
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
   - RULE-SET,akira-tiktok@domain,PROXY
-  - RULE-SET,akira-twitch@domain,DIRECT
   - RULE-SET,akira-twitch-ads@domain,PROXY
   - RULE-SET,akira-youtube@domain,PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
@@ -392,21 +392,6 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs,
     }
-  akira-ai@classical:
-    {
-      <<: *classical,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml,
-    }
-  akira-ai@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs,
-    }
-  akira-ai@ipcidr:
-    {
-      <<: *ipcidr,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs,
-    }
   akira-block-ipv6@ipcidr:
     {
       <<: *ipcidr,
@@ -421,6 +406,41 @@ rule-providers:
     {
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs,
+    }
+  akira-ip-geo-detect@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs,
+    }
+  akira-private@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs,
+    }
+  akira-private@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs,
+    }
+  akira-twitch@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs,
+    }
+  akira-ai@classical:
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@classical.yaml,
+    }
+  akira-ai@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs,
+    }
+  akira-ai@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs,
     }
   akira-boundle-proxy@domain:
     {
@@ -467,11 +487,6 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@ipcidr.mrs,
     }
-  akira-ip-geo-detect@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs,
-    }
   akira-kodik@domain:
     {
       <<: *domain,
@@ -486,16 +501,6 @@ rule-providers:
     {
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs,
-    }
-  akira-private@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs,
-    }
-  akira-private@ipcidr:
-    {
-      <<: *ipcidr,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@ipcidr.mrs,
     }
   akira-prizrak-all-in@domain:
     {
@@ -537,11 +542,6 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs,
     }
-  akira-twitch@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch@domain.mrs,
-    }
   akira-youtube@domain:
     {
       <<: *domain,
@@ -560,14 +560,20 @@ rules:
   - RULE-SET,akira-adlist@domain,REJECT
   - RULE-SET,akira-ads-osid-big@domain,REJECT
   - RULE-SET,akira-ads-osid-small@domain,REJECT
+  - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
+  - RULE-SET,akira-block-quic@classical,REJECT
+  - RULE-SET,akira-boundle-direct@domain,DIRECT
+  - RULE-SET,akira-ip-geo-detect@domain,DIRECT
+  - OR,(
+    (RULE-SET,akira-private@domain),
+    (RULE-SET,akira-private@ipcidr,no-resolve)
+    ),DIRECT
+  - RULE-SET,akira-twitch@domain,DIRECT
   - OR,(
     (RULE-SET,akira-ai@domain),
     (RULE-SET,akira-ai@ipcidr,no-resolve),
     (RULE-SET,akira-ai@classical)
     ),PROXY
-  - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
-  - RULE-SET,akira-block-quic@classical,REJECT
-  - RULE-SET,akira-boundle-direct@domain,DIRECT
   - RULE-SET,akira-boundle-proxy@domain,PROXY
   - OR,(
     (RULE-SET,akira-discord@domain),
@@ -583,16 +589,11 @@ rules:
     (RULE-SET,akira-google@domain),
     (RULE-SET,akira-google@ipcidr,no-resolve)
     ),PROXY
-  - RULE-SET,akira-ip-geo-detect@domain,DIRECT
   - RULE-SET,akira-kodik@domain,PROXY
   - OR,(
     (RULE-SET,akira-meta@domain),
     (RULE-SET,akira-meta@ipcidr,no-resolve)
     ),PROXY
-  - OR,(
-    (RULE-SET,akira-private@domain),
-    (RULE-SET,akira-private@ipcidr,no-resolve)
-    ),DIRECT
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
@@ -606,7 +607,6 @@ rules:
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
     ),PROXY
   - RULE-SET,akira-tiktok@domain,PROXY
-  - RULE-SET,akira-twitch@domain,DIRECT
   - RULE-SET,akira-twitch-ads@domain,PROXY
   - RULE-SET,akira-youtube@domain,PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
