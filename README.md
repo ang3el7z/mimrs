@@ -25,7 +25,6 @@
 | `akira-discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs) |
 | `akira-discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs) |
 | `akira-games@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs) |
-| `akira-games@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs) |
 | `akira-github@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-github@domain.mrs) |
 | `akira-google@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@domain.mrs) |
 | `akira-google@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@ipcidr.mrs) |
@@ -173,12 +172,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs
-  akira-games@ipcidr:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs
   akira-github@domain:
     type: http
     behavior: domain
@@ -303,10 +296,7 @@ rules:
     (RULE-SET,akira-discord@ipcidr,no-resolve),
     (RULE-SET,akira-discord@classical)
     ),PROXY
-  - OR,(
-    (RULE-SET,akira-games@domain),
-    (RULE-SET,akira-games@ipcidr,no-resolve)
-    ),PROXY
+  - RULE-SET,akira-games@domain,PROXY
   - RULE-SET,akira-github@domain,PROXY
   - OR,(
     (RULE-SET,akira-google@domain),
@@ -467,11 +457,6 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs,
     }
-  akira-games@ipcidr:
-    {
-      <<: *ipcidr,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs,
-    }
   akira-github@domain:
     {
       <<: *domain,
@@ -580,10 +565,7 @@ rules:
     (RULE-SET,akira-discord@ipcidr,no-resolve),
     (RULE-SET,akira-discord@classical)
     ),PROXY
-  - OR,(
-    (RULE-SET,akira-games@domain),
-    (RULE-SET,akira-games@ipcidr,no-resolve)
-    ),PROXY
+  - RULE-SET,akira-games@domain,PROXY
   - RULE-SET,akira-github@domain,PROXY
   - OR,(
     (RULE-SET,akira-google@domain),
