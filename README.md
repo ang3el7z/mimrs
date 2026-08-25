@@ -32,8 +32,6 @@
 | `akira-kodik@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs) |
 | `akira-meta@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@domain.mrs) |
 | `akira-meta@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs) |
-| `akira-prizrak-all-in@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@domain.mrs) |
-| `akira-prizrak-all-in@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@ipcidr.mrs) |
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
 | `akira-prizrak@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs) |
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
@@ -215,18 +213,6 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs
-  akira-prizrak-all-in@domain:
-    type: http
-    behavior: domain
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@domain.mrs
-  akira-prizrak-all-in@ipcidr:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    interval: 86400
-    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@ipcidr.mrs
   akira-prizrak@domain:
     type: http
     behavior: domain
@@ -320,10 +306,6 @@ rules:
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
-    ),PROXY
-  - OR,(
-    (RULE-SET,akira-prizrak-all-in@domain),
-    (RULE-SET,akira-prizrak-all-in@ipcidr,no-resolve)
     ),PROXY
   - OR,(
     (RULE-SET,akira-telegram@domain),
@@ -502,16 +484,6 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs,
     }
-  akira-prizrak-all-in@domain:
-    {
-      <<: *domain,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@domain.mrs,
-    }
-  akira-prizrak-all-in@ipcidr:
-    {
-      <<: *ipcidr,
-      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak-all-in@ipcidr.mrs,
-    }
   akira-prizrak@domain:
     {
       <<: *domain,
@@ -597,10 +569,6 @@ rules:
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
-    ),PROXY
-  - OR,(
-    (RULE-SET,akira-prizrak-all-in@domain),
-    (RULE-SET,akira-prizrak-all-in@ipcidr,no-resolve)
     ),PROXY
   - OR,(
     (RULE-SET,akira-telegram@domain),
