@@ -39,6 +39,7 @@
 | `akira-tiktok@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-tiktok@domain.mrs) |
 | `akira-twitch-ads@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs) |
 | `akira-youtube@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs) |
+| `akira-youtube@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@ipcidr.mrs) |
 | `akira-yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs) |
 
 ## Mihomo
@@ -255,6 +256,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs
+  akira-youtube@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@ipcidr.mrs
   akira-yummyani@domain:
     type: http
     behavior: domain
@@ -313,7 +320,10 @@ rules:
     ),PROXY
   - RULE-SET,akira-tiktok@domain,PROXY
   - RULE-SET,akira-twitch-ads@domain,PROXY
-  - RULE-SET,akira-youtube@domain,PROXY
+  - OR,(
+    (RULE-SET,akira-youtube@domain),
+    (RULE-SET,akira-youtube@ipcidr,no-resolve)
+    ),PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
 ```
 
@@ -519,6 +529,11 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs,
     }
+  akira-youtube@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@ipcidr.mrs,
+    }
   akira-yummyani@domain:
     {
       <<: *domain,
@@ -576,7 +591,10 @@ rules:
     ),PROXY
   - RULE-SET,akira-tiktok@domain,PROXY
   - RULE-SET,akira-twitch-ads@domain,PROXY
-  - RULE-SET,akira-youtube@domain,PROXY
+  - OR,(
+    (RULE-SET,akira-youtube@domain),
+    (RULE-SET,akira-youtube@ipcidr,no-resolve)
+    ),PROXY
   - RULE-SET,akira-yummyani@domain,PROXY
 ```
 
