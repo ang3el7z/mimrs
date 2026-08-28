@@ -24,6 +24,7 @@
 | `akira-discord@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml) |
 | `akira-discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs) |
 | `akira-discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs) |
+| `akira-games@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@classical.yaml) |
 | `akira-games@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs) |
 | `akira-games@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs) |
 | `akira-github@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-github@domain.mrs) |
@@ -166,6 +167,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs
+  akira-games@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@classical.yaml
   akira-games@domain:
     type: http
     behavior: domain
@@ -298,7 +305,8 @@ rules:
     ),PROXY
   - OR,(
     (RULE-SET,akira-games@domain),
-    (RULE-SET,akira-games@ipcidr,no-resolve)
+    (RULE-SET,akira-games@ipcidr,no-resolve),
+    (RULE-SET,akira-games@classical)
     ),PROXY
   - RULE-SET,akira-github@domain,PROXY
   - OR,(
@@ -454,6 +462,11 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs,
     }
+  akira-games@classical:
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@classical.yaml,
+    }
   akira-games@domain:
     {
       <<: *domain,
@@ -569,7 +582,8 @@ rules:
     ),PROXY
   - OR,(
     (RULE-SET,akira-games@domain),
-    (RULE-SET,akira-games@ipcidr,no-resolve)
+    (RULE-SET,akira-games@ipcidr,no-resolve),
+    (RULE-SET,akira-games@classical)
     ),PROXY
   - RULE-SET,akira-github@domain,PROXY
   - OR,(
