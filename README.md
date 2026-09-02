@@ -21,6 +21,7 @@
 | `akira-ai@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@domain.mrs) |
 | `akira-ai@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ai@ipcidr.mrs) |
 | `akira-boundle-proxy@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs) |
+| `akira-bybit@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-bybit@domain.mrs) |
 | `akira-discord@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@classical.yaml) |
 | `akira-discord@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@domain.mrs) |
 | `akira-discord@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-discord@ipcidr.mrs) |
@@ -149,6 +150,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs
+  akira-bybit@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-bybit@domain.mrs
   akira-discord@classical:
     type: http
     behavior: classical
@@ -298,6 +305,7 @@ rules:
     (RULE-SET,akira-ai@classical)
     ),PROXY
   - RULE-SET,akira-boundle-proxy@domain,PROXY
+  - RULE-SET,akira-bybit@domain,PROXY
   - OR,(
     (RULE-SET,akira-discord@domain),
     (RULE-SET,akira-discord@ipcidr,no-resolve),
@@ -447,6 +455,11 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-proxy@domain.mrs,
     }
+  akira-bybit@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-bybit@domain.mrs,
+    }
   akira-discord@classical:
     {
       <<: *classical,
@@ -575,6 +588,7 @@ rules:
     (RULE-SET,akira-ai@classical)
     ),PROXY
   - RULE-SET,akira-boundle-proxy@domain,PROXY
+  - RULE-SET,akira-bybit@domain,PROXY
   - OR,(
     (RULE-SET,akira-discord@domain),
     (RULE-SET,akira-discord@ipcidr,no-resolve),
