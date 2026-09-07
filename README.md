@@ -37,6 +37,7 @@
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
 | `akira-prizrak@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs) |
 | `akira-reddit@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-reddit@domain.mrs) |
+| `akira-rezka@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-rezka@domain.mrs) |
 | `akira-telegram@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@domain.mrs) |
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
 | `akira-tiktok@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-tiktok@domain.mrs) |
@@ -247,6 +248,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-reddit@domain.mrs
+  akira-rezka@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-rezka@domain.mrs
   akira-telegram@domain:
     type: http
     behavior: domain
@@ -338,6 +345,7 @@ rules:
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
     ),PROXY
   - RULE-SET,akira-reddit@domain,PROXY
+  - RULE-SET,akira-rezka@domain,PROXY
   - OR,(
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
@@ -543,6 +551,11 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-reddit@domain.mrs,
     }
+  akira-rezka@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-rezka@domain.mrs,
+    }
   akira-telegram@domain:
     {
       <<: *domain,
@@ -627,6 +640,7 @@ rules:
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
     ),PROXY
   - RULE-SET,akira-reddit@domain,PROXY
+  - RULE-SET,akira-rezka@domain,PROXY
   - OR,(
     (RULE-SET,akira-telegram@domain),
     (RULE-SET,akira-telegram@ipcidr,no-resolve)
