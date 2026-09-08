@@ -42,6 +42,8 @@
 | `akira-telegram@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-telegram@ipcidr.mrs) |
 | `akira-tiktok@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-tiktok@domain.mrs) |
 | `akira-twitch-ads@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs) |
+| `akira-white@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-white@domain.mrs) |
+| `akira-white@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-white@ipcidr.mrs) |
 | `akira-youtube@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@domain.mrs) |
 | `akira-youtube@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-youtube@ipcidr.mrs) |
 | `akira-yummyani@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-yummyani@domain.mrs) |
@@ -278,6 +280,18 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs
+  akira-white@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-white@domain.mrs
+  akira-white@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-white@ipcidr.mrs
   akira-youtube@domain:
     type: http
     behavior: domain
@@ -352,6 +366,10 @@ rules:
     ),PROXY
   - RULE-SET,akira-tiktok@domain,PROXY
   - RULE-SET,akira-twitch-ads@domain,PROXY
+  - OR,(
+    (RULE-SET,akira-white@domain),
+    (RULE-SET,akira-white@ipcidr,no-resolve)
+    ),PROXY
   - OR,(
     (RULE-SET,akira-youtube@domain),
     (RULE-SET,akira-youtube@ipcidr,no-resolve)
@@ -576,6 +594,16 @@ rule-providers:
       <<: *domain,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-twitch-ads@domain.mrs,
     }
+  akira-white@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-white@domain.mrs,
+    }
+  akira-white@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-white@ipcidr.mrs,
+    }
   akira-youtube@domain:
     {
       <<: *domain,
@@ -647,6 +675,10 @@ rules:
     ),PROXY
   - RULE-SET,akira-tiktok@domain,PROXY
   - RULE-SET,akira-twitch-ads@domain,PROXY
+  - OR,(
+    (RULE-SET,akira-white@domain),
+    (RULE-SET,akira-white@ipcidr,no-resolve)
+    ),PROXY
   - OR,(
     (RULE-SET,akira-youtube@domain),
     (RULE-SET,akira-youtube@ipcidr,no-resolve)
