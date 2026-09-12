@@ -39,6 +39,7 @@
 | `akira-kodik@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-kodik@domain.mrs) |
 | `akira-meta@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@domain.mrs) |
 | `akira-meta@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs) |
+| `akira-porn@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-porn@domain.mrs) |
 | `akira-prizrak@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@domain.mrs) |
 | `akira-prizrak@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-prizrak@ipcidr.mrs) |
 | `akira-reddit@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-reddit@domain.mrs) |
@@ -265,6 +266,12 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs
+  akira-porn@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-porn@domain.mrs
   akira-prizrak@domain:
     type: http
     behavior: domain
@@ -384,6 +391,7 @@ rules:
     (RULE-SET,akira-meta@domain),
     (RULE-SET,akira-meta@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-porn@domain,PROXY
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
@@ -605,6 +613,11 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-meta@ipcidr.mrs,
     }
+  akira-porn@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-porn@domain.mrs,
+    }
   akira-prizrak@domain:
     {
       <<: *domain,
@@ -713,6 +726,7 @@ rules:
     (RULE-SET,akira-meta@domain),
     (RULE-SET,akira-meta@ipcidr,no-resolve)
     ),PROXY
+  - RULE-SET,akira-porn@domain,PROXY
   - OR,(
     (RULE-SET,akira-prizrak@domain),
     (RULE-SET,akira-prizrak@ipcidr,no-resolve)
