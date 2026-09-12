@@ -12,6 +12,9 @@
 | `akira-ads-osid-small@domain.mrs` | `domain` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ads-osid-small@domain.mrs) |
 | `akira-block-ipv6@ipcidr.mrs` | `ipcidr` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-ipv6@ipcidr.mrs) |
 | `akira-block-quic@classical.yaml` | `classical` | `REJECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml) |
+| `akira-apple@classical.yaml` | `classical` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@classical.yaml) |
+| `akira-apple@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@domain.mrs) |
+| `akira-apple@ipcidr.mrs` | `ipcidr` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@ipcidr.mrs) |
 | `akira-boundle-direct@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-boundle-direct@domain.mrs) |
 | `akira-ip-geo-detect@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-ip-geo-detect@domain.mrs) |
 | `akira-private@domain.mrs` | `domain` | `DIRECT` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-private@domain.mrs) |
@@ -100,6 +103,24 @@ rule-providers:
     format: yaml
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml
+  akira-apple@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@classical.yaml
+  akira-apple@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@domain.mrs
+  akira-apple@ipcidr:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@ipcidr.mrs
   akira-boundle-direct@domain:
     type: http
     behavior: domain
@@ -320,6 +341,11 @@ rules:
   - RULE-SET,akira-ads-osid-small@domain,REJECT
   - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
   - RULE-SET,akira-block-quic@classical,REJECT
+  - OR,(
+    (RULE-SET,akira-apple@domain),
+    (RULE-SET,akira-apple@ipcidr,no-resolve),
+    (RULE-SET,akira-apple@classical)
+    ),DIRECT
   - RULE-SET,akira-boundle-direct@domain,DIRECT
   - RULE-SET,akira-ip-geo-detect@domain,DIRECT
   - OR,(
@@ -443,6 +469,21 @@ rule-providers:
     {
       <<: *classical,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-block-quic@classical.yaml,
+    }
+  akira-apple@classical:
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@classical.yaml,
+    }
+  akira-apple@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@domain.mrs,
+    }
+  akira-apple@ipcidr:
+    {
+      <<: *ipcidr,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-apple@ipcidr.mrs,
     }
   akira-boundle-direct@domain:
     {
@@ -629,6 +670,11 @@ rules:
   - RULE-SET,akira-ads-osid-small@domain,REJECT
   - RULE-SET,akira-block-ipv6@ipcidr,REJECT,no-resolve
   - RULE-SET,akira-block-quic@classical,REJECT
+  - OR,(
+    (RULE-SET,akira-apple@domain),
+    (RULE-SET,akira-apple@ipcidr,no-resolve),
+    (RULE-SET,akira-apple@classical)
+    ),DIRECT
   - RULE-SET,akira-boundle-direct@domain,DIRECT
   - RULE-SET,akira-ip-geo-detect@domain,DIRECT
   - OR,(
