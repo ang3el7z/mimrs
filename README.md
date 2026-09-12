@@ -33,6 +33,8 @@
 | `akira-games@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@classical.yaml) |
 | `akira-games@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@domain.mrs) |
 | `akira-games@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs) |
+| `akira-gemini@classical.yaml` | `classical` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-gemini@classical.yaml) |
+| `akira-gemini@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-gemini@domain.mrs) |
 | `akira-github@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-github@domain.mrs) |
 | `akira-google@domain.mrs` | `domain` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@domain.mrs) |
 | `akira-google@ipcidr.mrs` | `ipcidr` | `PROXY` | [download](https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-google@ipcidr.mrs) |
@@ -230,6 +232,18 @@ rule-providers:
     format: mrs
     interval: 86400
     url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs
+  akira-gemini@classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-gemini@classical.yaml
+  akira-gemini@domain:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 86400
+    url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-gemini@domain.mrs
   akira-github@domain:
     type: http
     behavior: domain
@@ -380,6 +394,10 @@ rules:
     (RULE-SET,akira-games@domain),
     (RULE-SET,akira-games@ipcidr,no-resolve),
     (RULE-SET,akira-games@classical)
+    ),PROXY
+  - OR,(
+    (RULE-SET,akira-gemini@domain),
+    (RULE-SET,akira-gemini@classical)
     ),PROXY
   - RULE-SET,akira-github@domain,PROXY
   - OR,(
@@ -583,6 +601,16 @@ rule-providers:
       <<: *ipcidr,
       url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-games@ipcidr.mrs,
     }
+  akira-gemini@classical:
+    {
+      <<: *classical,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-gemini@classical.yaml,
+    }
+  akira-gemini@domain:
+    {
+      <<: *domain,
+      url: https://github.com/ang3el7z/mimrs/releases/download/mrs-latest/akira-gemini@domain.mrs,
+    }
   akira-github@domain:
     {
       <<: *domain,
@@ -715,6 +743,10 @@ rules:
     (RULE-SET,akira-games@domain),
     (RULE-SET,akira-games@ipcidr,no-resolve),
     (RULE-SET,akira-games@classical)
+    ),PROXY
+  - OR,(
+    (RULE-SET,akira-gemini@domain),
+    (RULE-SET,akira-gemini@classical)
     ),PROXY
   - RULE-SET,akira-github@domain,PROXY
   - OR,(
